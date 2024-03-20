@@ -241,12 +241,12 @@ footer {
   display: none;
 }
 /* ---------------------------media query-------------------- */
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   html {
     font-size: 52.5%;
   }
 }
-@media (max-width: 866px) {
+@media (max-width: 54.13em) {
   .grid--3--cols {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -269,7 +269,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 36.25em) {
   .grid--3--cols {
     grid-template-columns: 1fr;
   }
@@ -294,7 +294,7 @@ footer {
     font-size: 1.5rem;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 26.56em) {
   .section-products {
     padding: 0 3.2rem;
   }
