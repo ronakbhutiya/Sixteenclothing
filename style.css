@@ -199,7 +199,7 @@ html {
 }
 .about-btn {
   background-color: #ca2d38;
-  color: rgb(139, 139, 148);
+  color: rgb(246, 246, 249);
   padding: 1.2rem 2.4rem;
   border: none;
   outline: none;
@@ -256,7 +256,7 @@ footer {
     gap: 3.2rem;
     text-align: center;
   }
-  .purchase-container .about-btn{
+  .purchase-container .about-btn {
     width: 50%;
   }
   /* .navigation {
@@ -264,7 +264,6 @@ footer {
   } */
   .menu-icon {
     display: block;
-
   }
   .nav-list {
     display: none;
