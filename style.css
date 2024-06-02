@@ -6,9 +6,12 @@
 html {
   font-size: 62.5%;
   font-family: "Quattrocento Sans", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .header-nav {
+  position: relative;
   height: 7rem;
   padding: 0 9.6rem;
   background-color: #10131a;
@@ -33,10 +36,24 @@ html {
   text-decoration: none;
   color: rgb(179, 179, 183);
   font-size: 2.4rem;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
 }
 .nav-link:hover {
   border-bottom: 3px solid #ca2d38;
+}
+.mobile-navbar-btn {
+  display: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.mobile-nav-icon {
+  color: rgb(179, 179, 183);
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+}
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
 }
 .hero {
   background-image: linear-gradient(
@@ -49,7 +66,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   /* width: 100%; */
-  height: 100vh;
+  height: calc(100vh - 7rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +102,7 @@ html {
 .view-all {
   cursor: pointer;
   color: #ca2d38;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 .grid {
   display: grid;
@@ -102,6 +119,7 @@ html {
   box-shadow: 2px 2px 2px rgb(179, 179, 183);
   border-left: 0.01px solid rgb(179, 179, 183);
   transition: all 0.4s;
+  cursor: pointer;
   /* overflow: hidden; */
 }
 .products-details:hover {
@@ -122,7 +140,7 @@ html {
 .price-text {
   text-align: start;
   color: rgb(95 95 102);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   margin-bottom: 1.6rem;
 }
@@ -132,7 +150,7 @@ html {
   align-items: center;
 }
 .icon-text p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #ca2d38;
   font-weight: 700;
 }
@@ -143,7 +161,7 @@ html {
 .price-title,
 .price {
   color: #114963;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1.6rem;
 }
@@ -157,7 +175,7 @@ html {
 .section-about h2 {
   font-size: 3rem;
   color: #10131a;
-  font-weight: 100;
+  font-weight: 600;
 
   padding: 4.8rem 0 1.6rem 0;
 }
@@ -177,11 +195,11 @@ html {
 }
 .about-heading {
   color: #114963;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
 }
 .about-header-text {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: rgb(95 95 102);
 }
 .about-header-text a {
@@ -193,9 +211,10 @@ html {
   color: #114963;
 }
 .about-list {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: rgb(95 95 102);
   line-height: 2;
+  list-style: none;
 }
 .about-btn {
   background-color: #ca2d38;
@@ -204,6 +223,7 @@ html {
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: 1.6rem;
   transition: all 0.3s;
 }
 .about-btn:hover {
@@ -235,12 +255,7 @@ footer {
   font-weight: 400;
   text-align: center;
 }
-.menu-icon {
-  color: rgb(179, 179, 183);
-  width: 3.4rem;
-  height: 3.4rem;
-  display: none;
-}
+
 /* ---------------------------media query-------------------- */
 @media (max-width: 62.5em) {
   html {
@@ -262,10 +277,36 @@ footer {
   /* .navigation {
     display: none;
   } */
-  .menu-icon {
+  .mobile-navbar-btn {
     display: block;
   }
   .nav-list {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #10131a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.5s linear;
+  }
+  .active .nav-list {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+  .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
     display: none;
   }
   .grid--2--cols {
