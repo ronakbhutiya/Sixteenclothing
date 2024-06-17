@@ -13,7 +13,7 @@ html {
 .header-nav {
   position: relative;
   height: 7rem;
-  padding: 0 9.6rem;
+  padding: 0 2rem;
   background-color: #10131a;
   display: flex;
   justify-content: space-between;
@@ -35,7 +35,7 @@ html {
 .nav-link {
   text-decoration: none;
   color: rgb(179, 179, 183);
-  font-size: 2.4rem;
+  font-size: 2rem;
   transition: all 0.2s ease-in-out;
 }
 .nav-link:hover {
@@ -55,13 +55,20 @@ html {
 .mobile-nav-icon[name="close-outline"] {
   display: none;
 }
+.container-1 {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.container {
+  padding: 2.4rem;
+}
 .hero {
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.55),
       rgba(0, 0, 0, 0.55)
     ),
-    url(thought-catalog-OJZB0VUQKKc-unsplash.jpg);
+    url(./img/thought-catalog-OJZB0VUQKKc-unsplash.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,7 +90,7 @@ html {
 }
 /* ---------products-section-------------- */
 .section-products {
-  padding: 0 9.6rem;
+  padding: 0 2rem;
 }
 
 .products-shops {
@@ -128,9 +135,7 @@ html {
 .products-img {
   width: 100%;
 }
-.container {
-  padding: 2.4rem;
-}
+
 .price-text-title {
   display: flex;
   justify-content: space-between;
@@ -170,7 +175,7 @@ html {
 }
 /* ------------------SECTION ABOUT ---------------------- */
 .section-about {
-  padding: 0 9.6rem;
+  padding: 0 2rem;
 }
 .section-about h2 {
   font-size: 3rem;
@@ -321,32 +326,18 @@ footer {
     font-size: 3rem;
   }
 
-  .header-nav {
-    padding: 0 2.4rem;
-  }
   .about-text {
     padding: 4.8rem 0;
   }
-  .section-products .section-about {
-    padding: 0 4.8rem;
-  }
-  .section-purchase {
-    padding: 3.2rem 8rem;
-  }
+
   .about-btn {
     padding: 1rem 2rem;
     font-size: 1.5rem;
   }
 }
 @media (max-width: 26.56em) {
-  .section-products {
-    padding: 0 3.2rem;
-  }
-  .section-about {
-    padding: 0 3.2rem;
-  }
   .section-purchase {
-    padding: 2.4rem 3.2rem;
+    padding: 2.4rem 2rem;
   }
   html {
     font-size: 42.5%;
